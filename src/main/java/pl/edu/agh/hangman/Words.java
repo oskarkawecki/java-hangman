@@ -15,7 +15,7 @@ public class Words {
 		this.words = words;
 	}
 
-	public static void constructor(String slowa) throws IOException {
+	public static void addWordsToTheList() throws IOException {
 
 		ArrayList words = new ArrayList();
 		BufferedReader read = new BufferedReader(new FileReader("slowa"));
