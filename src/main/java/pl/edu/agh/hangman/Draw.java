@@ -1,17 +1,22 @@
 package pl.edu.agh.hangman;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Draw {
 	
-	private char[] draw(String [] words) {
+	public char[] draw() throws IOException {
 		
-		words = (String[]) Words.getWords().toArray();
+		Words w = new Words();
+		w.addWordsToTheList();
+		
+		ArrayList<String> words = w.getWords();
 		
 		Random random = new Random();
 		
-		 int randomNumber = random.nextInt(words.length); //random.nextInt(10);
-         char randomWordToGuess[] = words[randomNumber].toCharArray();
+		 int randomNumber = random.nextInt(words.size());
+         char randomWordToGuess[] = words.get(randomNumber).toCharArray();
          
 		return randomWordToGuess;	
 		
